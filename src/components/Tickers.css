@@ -1,5 +1,5 @@
 .tickers {
-  list-style-position: none;
+  list-style-type: none;
   padding: 0;
   display: inline-flex;
 }
