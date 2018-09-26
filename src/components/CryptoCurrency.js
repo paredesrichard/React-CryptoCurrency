@@ -23,6 +23,10 @@ const StyledCryptoCurItem = styled.li`
   }};
 `;
 
+const StyledCryptoCurrencyName = styled.p`
+  font-size: 1.25rem;
+`;
+
 class CryptoCurrency extends Component {
   render() {
     const {
@@ -37,10 +41,10 @@ class CryptoCurrency extends Component {
 
     return (
       <StyledCryptoCurItem id={id}>
-        <p className="cryptocurrencty-name">
+        <StyledCryptoCurrencyName>
           {" "}
           {name} ({symbol})
-        </p>
+        </StyledCryptoCurrencyName>
         <h1>${(+price_usd).toFixed(2)}</h1>
         <p>{percent_change_1h}% 1hr</p>
         <p>{percent_change_24h}% 24hrs</p>
