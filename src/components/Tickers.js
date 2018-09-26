@@ -1,7 +1,13 @@
 import React, { Component } from "react";
-import "./Tickers.css";
 import CryptoCurrency from "./CryptoCurrency";
 import axios from "axios";
+import styled from "styled-components";
+
+const StyledTickers = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  display: inline-flex;
+`;
 
 class Tickers extends Component {
   constructor(props) {
@@ -52,9 +58,12 @@ class Tickers extends Component {
       .catch(err => console.log(err));
   }
 
-  componentDidMount(){
+  componentDidMount() {
     this.fetchCryptocurrencyData();
-    this.interval = setInterval(() => this.fetchCryptocurrencyData(), 60 * 1000);
+    this.interval = setInterval(
+      () => this.fetchCryptocurrencyData(),
+      60 * 1000
+    );
   }
 
   render() {
@@ -62,8 +71,8 @@ class Tickers extends Component {
       <CryptoCurrency data={currency} key={currency.id} />
     ));
     return (
-      <div className="tickers-container">
-        <ul className="tickers">{tickers}</ul>
+      <div>
+        <StyledTickers>{tickers}</StyledTickers>
       </div>
     );
   }
