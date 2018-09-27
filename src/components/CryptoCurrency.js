@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-//import "./CryptoCurrency.css";
 import styled from "styled-components";
 
 const StyledCryptoCurItem = styled.li`
